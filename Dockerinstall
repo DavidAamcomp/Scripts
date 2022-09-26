@@ -1,7 +1,7 @@
 sudo apt update
 sudo apt upgrade -y
 sudo apt install ca-certificates curl gnupg lsb-release -y
-curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
 #Ubuntu
 echo \
