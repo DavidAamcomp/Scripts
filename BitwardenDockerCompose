@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: always
+    environment:
+      ROCKET_TLS: '{certs="/ssl/live/aamcomp.ml/fullchain.pem",key="/ssl/live/aamcomp.ml/privkey.pem"}'
+      ADMIN_TOKEN: '1/OArVfFvP1SuTXKZSB08s08/AA3sKr2O/OY33xmcW/w7RwxVMAGIHjXfcouwVB7'
+    volumes:
+      - /ssl/:/ssl/
+      - /bw-data/:/data/
+    ports:
+      - 443:80
+  watchtower:
+    image: containrrr/watchtower
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+#      - /root/.docker/config.json:/config.json
+#    command: --interval 30
+    command: --interval 3600
