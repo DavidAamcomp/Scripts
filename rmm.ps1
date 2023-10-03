@@ -1,5 +1,5 @@
 # author: https://github.com/bradhawkins85
-$innosetup = 'tacticalagent-v2.4.8-windows-amd64.exe'
+$innosetup = 'tacticalagent-v2.5.0-windows-amd64.exe'
 $api = '"https://api.aamcomp.ml"'
 $clientid = '1'
 $siteid = '43'
@@ -8,7 +8,7 @@ $power = 1
 $rdp = 1
 $ping = 1
 $auth = '"2cb1167a3d9ff0fe3b21ddc253eead50bd0a207adc1eea1598372f2c3e253d9f"'
-$downloadlink = 'https://github.com/amidaware/rmmagent/releases/download/v2.4.9/tacticalagent-v2.4.9-windows-amd64.exe'
+$downloadlink = 'https://github.com/amidaware/rmmagent/releases/download/v2.5.0/tacticalagent-v2.5.0-windows-amd64.exe'
 $apilink = $downloadlink.split('/')
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
