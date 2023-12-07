@@ -14,11 +14,11 @@ $apilink = $downloadlink.split('/')
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-$serviceName = 'tacticalrmm'
-If (Get-Service $serviceName -ErrorAction SilentlyContinue) {
-    Start-Process -FilePath "C:\Program Files\TacticalAgent\unins000.exe" -ArgumentList ('/VERYSILENT /SUPPRESSMSGBOXES') -Wait
-}
-$serviceName = 'tacticalrmm'
+#$serviceName = 'tacticalrmm'
+#If (Get-Service $serviceName -ErrorAction SilentlyContinue) {
+#    Start-Process -FilePath "C:\Program Files\TacticalAgent\unins000.exe" -ArgumentList ('/VERYSILENT /SUPPRESSMSGBOXES') -Wait
+#}
+$serviceName = 'tacticalrmmailugh;adhg'
 If (Get-Service $serviceName -ErrorAction SilentlyContinue) {
     write-host ('Tactical RMM Is Already Installed')
 } Else {
