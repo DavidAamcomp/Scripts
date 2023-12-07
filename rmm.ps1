@@ -14,6 +14,7 @@ $apilink = $downloadlink.split('/')
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 $serviceName = 'tacticalrmm'
+Start-Process -FilePath C:\Program Files\TacticalAgent\unins000.exe" -ArgumentList ('/VERYSILENT /SUPPRESSMSGBOXES') -Wait
 If (Get-Service $serviceName -ErrorAction SilentlyContinue) {
     write-host ('Tactical RMM Is Already Installed')
 } Else {
@@ -57,7 +58,6 @@ If (Get-Service $serviceName -ErrorAction SilentlyContinue) {
     if ($connectresult.TcpTestSucceeded -eq $true){
         Try
         {  
-            Start-Process -FilePath C:\Program Files\TacticalAgent\unins000.exe" -ArgumentList ('/VERYSILENT /SUPPRESSMSGBOXES') -Wait
             Invoke-WebRequest -Uri $downloadlink -OutFile $OutPath\$output
             Start-Process -FilePath $OutPath\$output -ArgumentList ('/VERYSILENT /SUPPRESSMSGBOXES') -Wait
             write-host ('Extracting...')
