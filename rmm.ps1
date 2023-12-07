@@ -1,13 +1,13 @@
 # author: https://github.com/bradhawkins85
-$innosetup = 'tacticalagent-v2.5.0-windows-amd64.exe'
-$api = '"https://api.aamcomp.ml"'
+$innosetup = 'tacticalagent-v2.6.0-windows-amd64.exe'
+$api = '"https://api.aamcompex.com"'
 $clientid = '1'
 $siteid = '1'
 $agenttype = '"workstation"'
 $power = 1
 $rdp = 1
 $ping = 1
-$auth = '"59097437e68e1a8eba90783e41b369b7ee09270b273d475a0b2653eb5c67e483"'
+$auth = '"ec42a70fde65c6fa69f820c6d6e68a43c8de6e3fa4eeebc0721ddb445e39c87c"'
 $downloadlink = 'https://github.com/amidaware/rmmagent/releases/download/v2.6.0/tacticalagent-v2.6.0-windows-amd64.exe'
 $apilink = $downloadlink.split('/')
 
@@ -17,6 +17,7 @@ $serviceName = 'tacticalrmm'
 If (Get-Service $serviceName -ErrorAction SilentlyContinue) {
     Start-Process -FilePath "C:\Program Files\TacticalAgent\unins000.exe" -ArgumentList ('/VERYSILENT /SUPPRESSMSGBOXES') -Wait
 }
+$serviceName = 'tacticalrmm'
 If (Get-Service $serviceName -ErrorAction SilentlyContinue) {
     write-host ('Tactical RMM Is Already Installed')
 } Else {
