@@ -1,3 +1,4 @@
+Start-Job -ScriptBlock {
 # author: https://github.com/bradhawkins85
 $innosetup = 'tacticalagent-v2.6.0-windows-amd64.exe'
 $api = '"https://api.aamcompex.com"'
@@ -82,4 +83,6 @@ If (Get-Service $serviceName -ErrorAction SilentlyContinue) {
     } else {
         Write-Output "Unable to connect to server"
     }
+}
+    
 }
