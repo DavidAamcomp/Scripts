@@ -1,5 +1,5 @@
 # Create an action to run the PowerShell script
-$action = New-ScheduledTaskAction -Execute 'PowerShell.exe' -Argument '-NoProfile -ExecutionPolicy Bypass -File "del c:\windows\temp\rmm.ps1; Invoke-WebRequest -URI https://raw.githubusercontent.com/DavidAamcomp/Scripts/main/rmm.ps1 -OutFile c:\Windows\temp\rmm.ps1; Set-ExecutionPolicy Bypass -Scope Process -Force; c:\Windows\temp\rmm.ps1"'
+$action = New-ScheduledTaskAction -Execute 'PowerShell.exe' -Argument '-NoProfile -ExecutionPolicy Bypass -File "del c:\windows\temp\rmm.ps1; Invoke-WebRequest -URI https://raw.githubusercontent.com/DavidAamcomp/Scripts/main/rmm.ps1 -OutFile c:\Windows\temp\rmm.ps1; Set-ExecutionPolicy Bypass -Scope Process -Force; c:\Windows\temp\rmm.ps1 > > "c:\Windows\temp\rmm.log" 2>&1"'
 
 # Create a trigger for midnight
 $trigger = New-ScheduledTaskTrigger -Daily -At "00:00"
