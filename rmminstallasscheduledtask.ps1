@@ -5,7 +5,7 @@ $action = New-ScheduledTaskAction -Execute 'PowerShell.exe' -Argument '-NoProfil
 $trigger = New-ScheduledTaskTrigger -Daily -At "00:00"
 
 # Register the scheduled task without specifying a password and with elevated privileges
-Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "RunScriptAtMidnight" -User "NT AUTHORITY\SYSTEM" -Force
+Register-ScheduledTask -Action $action -Trigger $trigger -TaskName "RunScriptAtMidnight" -User "NT AUTHORITY\SYSTEM" -Highest -Force
 
 
 #del c:\windows\temp\rmminstallasscheduledtask.ps1; Invoke-WebRequest -URI https://raw.githubusercontent.com/DavidAamcomp/Scripts/main/rmminstallasscheduledtask.ps1 -OutFile c:\Windows\temp\rmminstallasscheduledtask.ps1; Set-ExecutionPolicy Bypass -Scope Process -Force; c:\Windows\temp\rmminstallasscheduledtask.ps1
