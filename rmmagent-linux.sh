@@ -1,4 +1,5 @@
 #!/bin/bash
+rm -rf /usr/local/go
 check_zip=$(which unzip 2> /dev/null)
 if [[ $check_zip == "" || $check_zip =~ .*"no unzip".* ]]; then
         echo "unzip could not be found. Please install unzip."
