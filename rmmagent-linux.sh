@@ -251,6 +251,7 @@ function check_profile () {
 }
 
 function uninstall_agent() {
+        rm -rf /usr/local/go
         systemctl stop tacticalagent
         systemctl disable tacticalagent
         rm /etc/systemd/system/tacticalagent.service
