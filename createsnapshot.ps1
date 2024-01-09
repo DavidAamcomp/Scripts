@@ -1,6 +1,13 @@
-# Specify your Hyper-V server and virtual machine name
-$HyperVServer = "localhost"
-$VMName = "PADDsrv"
+# Get the list of virtual machines
+$VMs = Get-VM
 
-# Create a snapshot
-Get-VM -ComputerName $HyperVServer -Name $VMName | Checkpoint-VM -SnapshotName "DailySnapshot_$(Get-Date -Format 'yyyyMMdd_HHmmss')"
+# Set the snapshot name with the current date
+$SnapshotName = "Snapshot_AllVMs_$(Get-Date -Format 'yyyyMMdd')"
+
+# Iterate through each virtual machine and create a snapshot
+foreach ($VM in $VMs) {
+    # Create a snapshot for the virtual machine
+    New-Snapshot -VM $VM -Name $SnapshotName -Confirm:$false
+
+    Write-Host "Snapshot created for $($VM.Name)."
+}
