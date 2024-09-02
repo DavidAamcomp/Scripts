@@ -1,6 +1,6 @@
 #Start-Job -ScriptBlock {
 # author: https://github.com/bradhawkins85
-$innosetup = 'tacticalagent-v2.7.0-windows-amd64.exe'
+$innosetup = 'tacticalagent-v2.8.0-windows-amd64.exe'
 $api = '"https://api.aamcompex.com"'
 $clientid = '1'
 $siteid = '1'
@@ -9,7 +9,7 @@ $power = 1
 $rdp = 1
 $ping = 1
 $auth = '"ec42a70fde65c6fa69f820c6d6e68a43c8de6e3fa4eeebc0721ddb445e39c87c"'
-$downloadlink = 'https://github.com/amidaware/rmmagent/releases/download/v2.7.0/tacticalagent-v2.7.0-windows-amd64.exe'
+$downloadlink = 'https://github.com/amidaware/rmmagent/releases/download/v2.8.0/tacticalagent-v2.8.0-windows-amd64.exe'
 $apilink = $downloadlink.split('/')
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
