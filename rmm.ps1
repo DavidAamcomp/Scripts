@@ -1,6 +1,5 @@
-#Start-Job -ScriptBlock {
 # author: https://github.com/bradhawkins85
-$innosetup = 'tacticalagent-v2.8.0-windows-amd64.exe'
+$innosetup = 'tacticalagent-v2.9.0-windows-amd64.exe'
 $api = '"https://api.aamcompex.com"'
 $clientid = '1'
 $siteid = '1'
@@ -9,23 +8,19 @@ $power = 1
 $rdp = 1
 $ping = 1
 $auth = '"b143de19e9800f3d74932fc0d5e59184848f392a9841d0546a7880ef47d5fc63"'
-$downloadlink = 'https://github.com/amidaware/rmmagent/releases/download/v2.8.0/tacticalagent-v2.8.0-windows-amd64.exe'
+$downloadlink = 'https://github.com/amidaware/rmmagent/releases/download/v2.9.0/tacticalagent-v2.9.0-windows-amd64.exe'
 $apilink = $downloadlink.split('/')
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 $serviceName = 'tacticalrmm'
 If (Get-Service $serviceName -ErrorAction SilentlyContinue) {
-    Start-Process -FilePath "C:\Program Files\TacticalAgent\unins000.exe" -ArgumentList ('/VERYSILENT /SUPPRESSMSGBOXES') -Wait
-}
-$serviceName = 'tacticalrmmx'
-If (Get-Service $serviceName -ErrorAction SilentlyContinue) {
     write-host ('Tactical RMM Is Already Installed')
 } Else {
     $OutPath = $env:TMP
     $output = $innosetup
 
-    $installArgs = @('-m install --api ', "$api", '--client-id', $clientid, '--site-id', $siteid, '--agent-type', "$agenttype", '--auth', "$auth", '-silent' )
+    $installArgs = @('-m install --api ', "$api", '--client-id', $clientid, '--site-id', $siteid, '--agent-type', "$agenttype", '--auth', "$auth")
 
     if ($power) {
         $installArgs += "--power"
@@ -83,6 +78,8 @@ If (Get-Service $serviceName -ErrorAction SilentlyContinue) {
     } else {
         Write-Output "Unable to connect to server"
     }
+}
+
 }
     
 #}
