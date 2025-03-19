@@ -79,7 +79,3 @@ If (Get-Service $serviceName -ErrorAction SilentlyContinue) {
         Write-Output "Unable to connect to server"
     }
 }
-
-}
-    
-#}
