@@ -3,8 +3,8 @@ Start-Sleep -Seconds 60
 # author: https://github.com/bradhawkins85
 $innosetup = 'tacticalagent-v2.9.1-windows-amd64.exe'
 $api = '"https://api.aamcompex.com"'
-$clientid = '38'
-$siteid = '38'
+$clientid = '29'
+$siteid = '29'
 $agenttype = '"workstation"'
 $power = 1
 $rdp = 1
